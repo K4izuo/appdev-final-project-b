@@ -16,6 +16,9 @@ class PetsUser extends Authenticatable
      *
      * @var array<string>
      */
+    
+    protected $table = 'pets_users';
+    
     protected $fillable = [
       'first_name',
       'last_name',

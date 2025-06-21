@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('pets_admins', function (Blueprint $table) {
             $table->id();
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('phone');
+            $table->string('department');
+            $table->string('employeeId')->unique();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

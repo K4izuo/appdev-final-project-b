@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PetResource;
 use App\Models\PetsData;
 use Illuminate\Http\Request;
 
@@ -39,4 +40,11 @@ class PetsDataController extends Controller
 
         ];
     }
+
+    public function getAllPets()
+    {
+        $pets = PetsData::with(['gender', 'size', 'status'])->get();
+        return PetResource::collection($pets);
+    }
+
 }
