@@ -28,7 +28,7 @@ class PetsUserController extends Controller
         $userToken = $petsUser->createToken($petsUser->email);
 
         return [
-            'petsUser' => $petsUser,
+            'user' => $petsUser,
             'token' => $userToken->plainTextToken
         ];
     }
